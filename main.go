@@ -11,7 +11,22 @@ func main() {
   }
   printShapeArea(rec)
   printShapeArea(cir)
+  whatShapeTypeIs(cir)
 }
+
+
+
+func whatShapeTypeIs(i interface{}) {
+	switch v := i.(type) {
+	case Rectangle:
+		fmt.Printf("This is a %T and has an area %v", v,v.area())
+	case Circle:
+		fmt.Printf("This is a %T and has an area %v", v,v.area())
+	default:
+		fmt.Printf("I don't know about type %T!\n", v)
+	}
+}
+
 
 
 type Shape interface{
