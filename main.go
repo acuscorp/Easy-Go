@@ -5,15 +5,15 @@ import (
 
 func main() {
     rec := shape.Rectangle{
-      h: 2.0,
-      w: 3.0,
+      H: 2.0,
+      W: 3.0,
     }
   cir := shape.Circle{
-    r:10,
+    R:10,
   }
-  shape.printShapeArea(rec)
-  shape.printShapeArea(cir)
-  shape.whatShapeTypeIs(cir)
+  shape.PrintShapeArea(rec)
+  shape.PrintShapeArea(cir)
+  shape.WhatShapeTypeIs(cir)
 }
 
 
