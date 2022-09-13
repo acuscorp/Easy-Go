@@ -1,7 +1,18 @@
 package shape
 
 import "fmt"
-
+func initialize(){
+      rec := Rectangle{
+      H: 2.0,
+      W: 3.0,
+    }
+  cir := Circle{
+    R:10,
+  }
+  PrintShapeArea(rec)
+  PrintShapeArea(cir)
+  WhatShapeTypeIs(cir)
+}
 func WhatShapeTypeIs(i interface{}) {
   switch v := i.(type) {
   	case Rectangle:
