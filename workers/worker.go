@@ -1,8 +1,15 @@
 package workers
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
 
 func getPage(url string) (int, error) {
+	rand.Seed(time.Now().UnixNano())
+	n := rand.Intn(3000) 
+	time.Sleep(time.Duration(n) * time.Millisecond)
 	return len(url), nil
 }
 func worker(urlCh chan string, sizeCh chan string, id int) {
