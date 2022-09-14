@@ -1,10 +1,10 @@
 package main
 import (  
-   w "main/channels"
+   w "main/types"
 )
 
 func main() {
-  w.IniBufferedCahnnel()
+  w.InitTypes()
 }
 
 
