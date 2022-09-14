@@ -6,12 +6,16 @@ import (
 	"time"
 )
 
+const MAX_WORKERS = 10
+const MAX_RAND_TIME = 10000
+
 func getPage(url string) (int, error) {
 	rand.Seed(time.Now().UnixNano())
-	n := rand.Intn(3000) 
+	n := rand.Intn(MAX_RAND_TIME)
 	time.Sleep(time.Duration(n) * time.Millisecond)
 	return len(url), nil
 }
+
 func worker(urlCh chan string, sizeCh chan string, id int) {
 	for {
 		url := <-urlCh
@@ -23,6 +27,7 @@ func worker(urlCh chan string, sizeCh chan string, id int) {
 		}
 	}
 }
+
 func generator(url string, urlCh chan string) {
 	urlCh <- url
 }
@@ -38,7 +43,7 @@ func Initialize() {
 	sizeCh := make(chan string)
 	urlCh := make(chan string)
 
-	for id := 0; id < 10; id++ {
+	for id := 0; id < MAX_WORKERS; id++ {
 		go worker(urlCh, sizeCh, id)
 	}
 
@@ -48,5 +53,4 @@ func Initialize() {
 	for i := 0; i < len(urls); i++ {
 		fmt.Printf("%s\n", <-sizeCh)
 	}
-
 }

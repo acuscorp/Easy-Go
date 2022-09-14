@@ -1,6 +1,6 @@
 package main
 import (  
-   w "acuscorp.com/workers"
+   w "main/channels"
 )
 
 func main() {
