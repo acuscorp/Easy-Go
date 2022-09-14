@@ -4,7 +4,7 @@ import (
 )
 
 func main() {
-  w.Initialize()
+  w.InitializeNilChannel()
 }
 
 
