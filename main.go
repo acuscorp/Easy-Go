@@ -3,5 +3,5 @@ import (
   g "main/goroutines"
 )
 func main() {
-  g.InitDeadLock()
+  g.CloaureRightOperOne()
 }
