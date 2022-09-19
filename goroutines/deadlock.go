@@ -1,5 +1,10 @@
 package goroutines
+
 import "fmt"
+
+// you can pass anythin to a functions 
+// structs, functions, channels, data types
+
 func InitDeadLock(){
   ch1 := make(chan int)
 	ch2 := make(chan int)
@@ -54,7 +59,7 @@ func CloaureRightOperTwo(){
   ch := make(chan int)
   for _, v := range arr {
   
-    go func(){
+    go func(v int){
       ch <- v * 2
     }(v)
   }

@@ -3,5 +3,5 @@ import (
   g "main/goroutines"
 )
 func main() {
-  g.CloaureRightOperOne()
+  g.InitTimeOut()
 }
