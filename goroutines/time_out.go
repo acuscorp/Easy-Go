@@ -12,7 +12,7 @@ func InitTimeOut(){
   
   go func(){
     fmt.Println("Getting data from a servet...")
-    rand.Seed(time.Now().UnixNano())
+    
     var timeToSleep = time.Duration(rand.Intn(10))
     fmt.Println("this will take" ,timeToSleep*time.Second, " to response")  
     time.Sleep(timeToSleep * time.Second)
