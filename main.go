@@ -3,5 +3,5 @@ import (
   g "main/goroutines"
 )
 func main() {
-  g.InitWaitGroupr()
+  g.InitWaitGroupWithChannels()
 }
