@@ -1,7 +1,9 @@
 package main
+
 import (
-  g "main/goroutines"
+	g "main/goroutines"
 )
+
 func main() {
-  g.InitWaitGroupWithChannels()
+	g.InitGatherAndProcess()
 }
