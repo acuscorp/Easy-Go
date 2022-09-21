@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	g.InitJsonArray()
+	g.InitDecorationMarshal()
 }
