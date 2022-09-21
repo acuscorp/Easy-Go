@@ -1,9 +1,9 @@
 package main
 
 import (
-	g "main/goroutines"
+	g "main/serializing"
 )
 
 func main() {
-	g.InitGatherAndProcess()
+	g.InitJSONSerialing()
 }
