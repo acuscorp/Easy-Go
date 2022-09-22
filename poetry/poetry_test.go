@@ -15,7 +15,7 @@ func TestNumStanzas(t *testing.T) {
 		"The corn is golden along a thousand sea like slopes"},
 	}
 
-  if p.NumStanzas() != 7 {
+  if p.NumStanzas() != 1 {
     t.Fatalf("unexpected stanza count %d", p.NumStanzas())
   }
 }

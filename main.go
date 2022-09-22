@@ -1,9 +1,9 @@
 package main
 
 import (
-	g "main/serializing"
+	g "main/contexts"
 )
 
 func main() {
-	g.InitDecorationMarshal()
+	g.InitExtratFromContext()
 }
