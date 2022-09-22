@@ -1,4 +1,4 @@
-package tests_test
+package cmp_test
 
 import (
   "testing"

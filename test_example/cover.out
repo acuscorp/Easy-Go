@@ -1,0 +1,10 @@
+mode: set
+test_examples/cmp/cmp.go:11.48,17.2 1 1
+test_examples/race/race.go:7.23,11.25 4 1
+test_examples/race/race.go:19.3,20.17 2 1
+test_examples/race/race.go:11.25,12.14 1 1
+test_examples/race/race.go:12.14,13.33 1 1
+test_examples/race/race.go:16.7,16.16 1 1
+test_examples/race/race.go:13.33,15.8 1 1
+test_examples/adder/adder_public.go:3.31,5.2 1 1
+test_examples/adder/adder.go:3.31,5.2 1 0

@@ -1,5 +1,5 @@
 package adder
 
-func AddddNumbers(x, y int) int {
+func addNumbers(x, y int) int {
   return x+x
 }
