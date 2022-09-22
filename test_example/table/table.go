@@ -4,7 +4,7 @@ import (
   "fmt"
 )
 
-func DoMath(num1, nun2 int, op string) (int, string) {
+func DoMath(num1, num2 int, op string) (int, error) {
   switch op {
     case "+":
       return num1 + num2, nil
