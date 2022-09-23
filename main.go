@@ -1,9 +1,9 @@
 package main
 
 import (
-	g "main/reflection/my_reflection"
+	g "main/reflection/marshaling"
 )
 
 func main() {
-	g.Init_reflection_examples()
+	g.MyMarshalingCSV()
 }
