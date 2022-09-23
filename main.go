@@ -1,9 +1,9 @@
 package main
 
 import (
-	g "main/contexts"
+	g "main/reflection/my_reflection"
 )
 
 func main() {
-	g.InitExtratFromContext()
+	g.Init_reflection_examples()
 }
