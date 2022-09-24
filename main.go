@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	g.MyMarshalingCSV()
+	g.MyStuffsOnReflect()
 }

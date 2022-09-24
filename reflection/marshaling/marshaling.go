@@ -8,18 +8,38 @@ import (
 	"strconv"
 	"strings"
 )
+func MyStuffsOnReflect() {
+  var entries []MyData 
+  
+  func(v interface{}){
+    var myData MyData
+    vPtr := reflect.ValueOf(v)
+    println(vPtr.Type().String()) // prints []marshaling.MyData
+    println(vPtr.Type() == reflect.ValueOf(entries).Type()) // prints true
+    println(vPtr.Kind().String()) // prints slice
+    println(vPtr.Kind() == reflect.Slice) // prints strue
+    println(vPtr.Type().Elem().String()) //prints marshaling.MyData
+    println(vPtr.Type().Elem() == reflect.TypeOf(myData)) // prints true
+    println(vPtr.Type().Elem().Kind().String()) //prints struct
+    println(vPtr.Type().Elem().Kind() == reflect.Struct)  // prints true
+    
+  }(entries)
+}
 
 func MyMarshalingCSV() {
+  // this is a data example that could come from a csv file
 	data := `name,age,has_pet
 Jon,"100",true
 "Fred ""The Hammer"" Smith",42,false
 Martha,37,"true"
 `
+  // read the data and save it to a byte array allData
 	r := csv.NewReader(strings.NewReader(data))
 	allData, err := r.ReadAll()
 	if err != nil {
 		panic(err)
 	}
+  // data read form the file and save it in  MyData structure array using Unmarshal
 	var entries []MyData
 	println("Unmarshaling")
 	Unmarshal(allData, &entries)
@@ -102,19 +122,22 @@ func marshalOne(vv reflect.Value) ([]string, error) {
 	return row, nil
 }
 
+// why do we receive an interface?
+// because it means you can pass any data type
 func Unmarshal(data [][]string, v interface{}) error {
-	sliceValPtr := reflect.ValueOf(v)
-	if sliceValPtr.Kind() != reflect.Ptr {
+	sliceValPtr := reflect.ValueOf(v)         // why do I get an sliceValPtr?  from interfaces you get a reflect.Ptr  /
+	if sliceValPtr.Kind() != reflect.Ptr {    // so in is necessary to have the ponter in order to save the data to the real data type
 		return errors.New("must be a pointer to a slice of a struct")
 	}
 
-	sliceVal := sliceValPtr.Elem()
-	if sliceVal.Kind() != reflect.Slice {
+	sliceVal := sliceValPtr.Elem()            // from a pointer you can get the 'values or value' using Elem() so you can latter check /
+	if sliceVal.Kind() != reflect.Slice {     //with Kind() return the type of the structure, could be a map, slice, array, etc,.
 		return errors.New("must be a pointer to a slice of a struct")
 	}
 
-	structType := sliceVal.Type().Elem()
-	if structType.Kind() != reflect.Struct {
+	structType := sliceVal.Type().Elem()      // from sliceVal.Type() return the type of the slice and it is a MyData and then I get from Elem() the values so it returns/
+                                            // the values and of the MyData
+	if structType.Kind() != reflect.Struct {  // check if this is and structure
 		return errors.New("must be a pointer to a slice of a struct")
 	}
 
