@@ -1,9 +1,9 @@
 package main
 
 import (
-	g "main/reflection/function_wrapper"
+	g "main/reflection/filter"
 )
 
 func main() {
-	g.InitWrapperFunc()
+	g.InFilter()
 }
