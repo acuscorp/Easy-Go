@@ -1,0 +1,3 @@
+mode: set
+test_examples/adder/adder.go:3.33,5.2 1 0
+test_examples/adder/adder_public.go:3.31,5.2 1 1

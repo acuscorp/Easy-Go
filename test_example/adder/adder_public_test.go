@@ -1,8 +1,8 @@
 package adder_test
 
 import (
+	"test_examples/adder"
 	"testing"
-  "test_examples/adder"
 )
 
 func TestAddNumbers(t *testing.T) {

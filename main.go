@@ -1,9 +1,9 @@
 package main
 
 import (
-	g "main/contexts"
+	g "main/reflection/filter"
 )
 
 func main() {
-	g.InitExtratFromContext()
+	g.InFilter()
 }
