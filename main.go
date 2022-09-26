@@ -1,9 +1,9 @@
 package main
 
 import (
-	g "main/reflection/marshaling"
+	g "main/reflection/function_wrapper"
 )
 
 func main() {
-	g.MyStuffsOnReflect()
+	g.InitWrapperFunc()
 }
