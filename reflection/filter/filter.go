@@ -21,11 +21,6 @@ func InFilter() {
 
 	fmt.Println(adults)
 
-	adults2 := myFilter(ages, func(a int) bool {
-		return a >= 18
-	})
-
-	fmt.Printf("adults using generic filter: %v\n", adults2)
 }
 
 func Filter(slice interface{}, filter interface{}) interface{} {
@@ -45,13 +40,3 @@ func Filter(slice interface{}, filter interface{}) interface{} {
 	return out.Interface()
 }
 
-func myFilter[T any](slice []T, f func(T) bool) []T {
-	var n []T
-
-	for _, v := range slice {
-		if f(v) {
-			n = append(n, v)
-		}
-	}
-	return n
-}

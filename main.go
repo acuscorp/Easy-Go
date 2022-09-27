@@ -1,9 +1,9 @@
 package main
 
 import (
-	g "main/reflection/filter"
+	g "main/reflection/unsafe"
 )
 
 func main() {
-	g.InFilter()
+	g.InitStringModification1()
 }
