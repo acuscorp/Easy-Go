@@ -1,9 +1,9 @@
 package main
 
 import (
-	g "main/reflection/unsafe"
+	g "main/generics"
 )
 
 func main() {
-	g.InitStringModification1()
+	g.InitXGenerics()
 }
