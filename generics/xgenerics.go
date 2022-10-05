@@ -64,10 +64,6 @@ type A[T any] interface {
 	execute(t T)
 }
 
-func (a A[T]) Pu(b T) {
-	a.execute(b)
-}
-
 func (s *Struct[T]) Apply(f func(*Struct[T])) {
 	f(s)
 }

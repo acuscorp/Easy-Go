@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	g.InitXGenerics()
+	g.InitGenerics()
 }
